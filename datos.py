@@ -22,3 +22,9 @@ average_age_alive = np.mean(data_alive['age'])
 print(f"El promedio de edad de las personas participantes en el estudio es {average_age}") 
 print(f"Promedio de edad de las personas que perecieron  en el estudio es {average_age_dead}")
 print(f"Promedio de edad de las personas que sobrevivieron en el estudio es {average_age_alive}") 
+
+print(data.dtypes)
+
+male_smokers = data[(data['is_male'] == True) & (data['is_smoker'] == True)].shape[0]
+female_smokers = data[(data['is_male'] == False) & (data['is_smoker'] == True)].shape[0]
+print(f"Hay {male_smokers} hombres fumadores y {female_smokers} mujeres fumadoras.")

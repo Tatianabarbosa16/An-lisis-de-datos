@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import requests
 from datasets import load_dataset
 
 # Carga  dataset
@@ -29,3 +30,10 @@ male_smokers = data[(data['is_male'] == True) & (data['is_smoker'] == True)].sha
 female_smokers = data[(data['is_male'] == False) & (data['is_smoker'] == True)].shape[0]
 print(f"Hay {male_smokers} hombres fumadores y {female_smokers} mujeres fumadoras.")
  
+#Parte 4 Apis
+def descargar_datos(url, nombre_nuevo_archivo):
+    respuesta = requests.get(url)
+    with open(nombre_nuevo_archivo, 'w') as archivo:
+        archivo.write(respuesta.text)
+        
+    descargar_datos('https://huggingface.co/datasets/mstz/heart_failure/raw/main/heart_failure_clinical_records_dataset.csv', 'datos.csv')

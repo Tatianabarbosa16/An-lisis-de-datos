@@ -28,3 +28,4 @@ print(data.dtypes)
 male_smokers = data[(data['is_male'] == True) & (data['is_smoker'] == True)].shape[0]
 female_smokers = data[(data['is_male'] == False) & (data['is_smoker'] == True)].shape[0]
 print(f"Hay {male_smokers} hombres fumadores y {female_smokers} mujeres fumadoras.")
+ 

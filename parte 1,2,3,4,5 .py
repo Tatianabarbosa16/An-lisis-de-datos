@@ -2,6 +2,8 @@ import numpy as np
 import pandas as pd
 import requests
 from datasets import load_dataset
+import sys
+
 
 # Carga  dataset
 dataset = load_dataset("mstz/heart_failure")
@@ -70,4 +72,6 @@ def procesamiento_de_datos(df):
 
 
 df_limpio = procesamiento_de_datos(df)
+
+
 
